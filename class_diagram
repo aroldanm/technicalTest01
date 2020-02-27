@@ -1,0 +1,79 @@
+@startuml
+
+class Serie {
+    + id: Int
+    + url: String
+    + name: String
+    + rating: Float
+    + image: String
+    + summary: String
+}
+    
+package List {
+
+    class SeriesListViewController {
+    }
+    
+    class SeriesListViewModel {
+        + series: [Serie]
+        + shouldPaginate: Bool
+    }
+    
+    class SeriesListRequest {
+        + pag: Int
+    }
+    
+    class SeriesListResponse {
+        + series: [Serie]
+    }
+    
+    interface SeriesListPresenter {
+    }
+    class SeriesListPresenterImpl
+    SeriesListPresenter <|.. SeriesListPresenterImpl
+    SeriesListViewController -left-> SeriesListPresenter: use
+    SeriesListViewController -right-> SeriesListViewModel: use
+    
+    interface SeriesListInteractor {
+    }
+    class SeriesListInteractorImpl
+    SeriesListInteractor <|.. SeriesListInteractorImpl
+    SeriesListPresenterImpl -right-> SeriesListInteractor: use
+    
+    interface SeriesListDataProvider {
+    }
+    class SeriesListDataProviderImpl
+    SeriesListDataProvider <|.down. SeriesListDataProviderImpl
+    SeriesListInteractorImpl -> SeriesListDataProvider: use
+    SeriesListDataProviderImpl ..> SeriesListRequest
+    SeriesListDataProviderImpl ..> SeriesListResponse
+    
+    
+    interface SeriesListRouter {
+    }
+    class SeriesListRouterImpl
+    SeriesListRouter <|.. SeriesListRouterImpl
+    SeriesListPresenterImpl -left-> SeriesListRouter: use
+}
+
+package Detail {
+
+    class SeriesDetailViewController {
+    }
+
+    class SeriesDetailViewModel {
+        + name: String
+        + image: String
+        + rating: Float
+        + summary: String
+    }
+    SeriesDetailViewController -right-> SeriesDetailViewModel: use
+    
+    interface SeriesDetailPresenter {
+    }
+    class SeriesDetailPresenterImpl
+    SeriesDetailPresenter <|.. SeriesDetailPresenterImpl
+    SeriesDetailViewController --> SeriesDetailPresenter: use
+}
+
+@enduml

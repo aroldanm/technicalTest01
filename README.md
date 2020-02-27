@@ -39,5 +39,7 @@ T3-2. Capa de negocio
 T3-3. Capa de vista  
 
 ### Diagrama de clases
+En esta sección se pretende mostrar un modelado de la arquitectura planificada para su desarrollo. La intención es basarse en VIPER para definir esta arquitectura. 
+<img src="./class_diagram.png" width="100%"/>
 
 ## Desarrollo
