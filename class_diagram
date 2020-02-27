@@ -1,15 +1,15 @@
 @startuml
-
-class Serie {
-    + id: Int
-    + url: String
-    + name: String
-    + rating: Float
-    + image: String
-    + summary: String
-}
     
 package List {
+
+    class Serie {
+        + id: Int
+        + url: String
+        + name: String
+        + rating: Float
+        + image: String
+        + summary: String
+    }
 
     class SeriesListViewController {
     }
@@ -33,6 +33,10 @@ package List {
     SeriesListPresenter <|.. SeriesListPresenterImpl
     SeriesListViewController -left-> SeriesListPresenter: use
     SeriesListViewController -right-> SeriesListViewModel: use
+    
+    interface SeriesListViewDelegate {
+    }
+    SeriesListViewController .up.|> SeriesListViewDelegate
     
     interface SeriesListInteractor {
     }
@@ -74,6 +78,10 @@ package Detail {
     class SeriesDetailPresenterImpl
     SeriesDetailPresenter <|.. SeriesDetailPresenterImpl
     SeriesDetailViewController --> SeriesDetailPresenter: use
+    
+    interface SeriesDetailViewDelegate {
+    }
+    SeriesDetailViewDelegate <|.. SeriesDetailViewController
 }
 
 @enduml
