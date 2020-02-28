@@ -7,4 +7,13 @@
 //
 
 class SeriesListPresenterImpl: SeriesListPresenter {
+    private weak var delegate: SeriesListViewDelegate?
+    private let interactor: SeriesListInteractor
+    private let router: SeriesListRouter
+
+    init(interactor: SeriesListInteractor, router: SeriesListRouter, delegate: SeriesListViewDelegate) {
+        self.interactor = interactor
+        self.router = router
+        self.delegate = delegate
+    }
 }

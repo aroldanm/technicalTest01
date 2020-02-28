@@ -9,7 +9,12 @@
 import UIKit
 
 class SeriesListViewController: UIViewController {
+    var presenter: SeriesListPresenter?
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+}
+
+extension SeriesListViewController: SeriesListViewDelegate {
 }

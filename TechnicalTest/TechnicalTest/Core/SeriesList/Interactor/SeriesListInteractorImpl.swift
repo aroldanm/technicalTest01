@@ -7,4 +7,9 @@
 //
 
 class SeriesListInteractorImpl: SeriesListInteractor {
+    private let dataProvider: SeriesListDataProvider
+
+    init(dataProvider: SeriesListDataProvider) {
+        self.dataProvider = dataProvider
+    }
 }
