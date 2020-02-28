@@ -12,6 +12,19 @@
 		8510640E24096D1A00CD6B51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8510640D24096D1A00CD6B51 /* Assets.xcassets */; };
 		8510641124096D1A00CD6B51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8510640F24096D1A00CD6B51 /* LaunchScreen.storyboard */; };
 		8510641C24096D1A00CD6B51 /* TechnicalTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8510641B24096D1A00CD6B51 /* TechnicalTestTests.swift */; };
+		858ABE842409768F00CDD109 /* SeriesListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858ABE832409768F00CDD109 /* SeriesListDataProvider.swift */; };
+		858ABE862409769800CDD109 /* SeriesListDataProviderImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858ABE852409769800CDD109 /* SeriesListDataProviderImpl.swift */; };
+		858ABE88240976D400CDD109 /* SeriesListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858ABE87240976D400CDD109 /* SeriesListRouter.swift */; };
+		858ABE8A240976DD00CDD109 /* SeriesListRouterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858ABE89240976DD00CDD109 /* SeriesListRouterImpl.swift */; };
+		858ABE8C2409770300CDD109 /* SeriesListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858ABE8B2409770300CDD109 /* SeriesListInteractor.swift */; };
+		858ABE8E2409771600CDD109 /* SeriesListInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858ABE8D2409771600CDD109 /* SeriesListInteractorImpl.swift */; };
+		858ABE902409773B00CDD109 /* SeriesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858ABE8F2409773B00CDD109 /* SeriesListPresenter.swift */; };
+		858ABE922409774D00CDD109 /* SeriesListPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858ABE912409774D00CDD109 /* SeriesListPresenterImpl.swift */; };
+		858ABE95240977F000CDD109 /* SeriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858ABE93240977F000CDD109 /* SeriesListViewController.swift */; };
+		858ABE96240977F000CDD109 /* SeriesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 858ABE94240977F000CDD109 /* SeriesListViewController.xib */; };
+		858ABE992409792900CDD109 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858ABE982409792900CDD109 /* Factory.swift */; };
+		858ABE9B240979B400CDD109 /* SeriesListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858ABE9A240979B400CDD109 /* SeriesListFactory.swift */; };
+		858ABE9D2409839600CDD109 /* SeriesListViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858ABE9C2409839600CDD109 /* SeriesListViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +47,19 @@
 		8510641724096D1A00CD6B51 /* TechnicalTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TechnicalTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8510641B24096D1A00CD6B51 /* TechnicalTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnicalTestTests.swift; sourceTree = "<group>"; };
 		8510641D24096D1A00CD6B51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		858ABE832409768F00CDD109 /* SeriesListDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesListDataProvider.swift; sourceTree = "<group>"; };
+		858ABE852409769800CDD109 /* SeriesListDataProviderImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesListDataProviderImpl.swift; sourceTree = "<group>"; };
+		858ABE87240976D400CDD109 /* SeriesListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesListRouter.swift; sourceTree = "<group>"; };
+		858ABE89240976DD00CDD109 /* SeriesListRouterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesListRouterImpl.swift; sourceTree = "<group>"; };
+		858ABE8B2409770300CDD109 /* SeriesListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesListInteractor.swift; sourceTree = "<group>"; };
+		858ABE8D2409771600CDD109 /* SeriesListInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesListInteractorImpl.swift; sourceTree = "<group>"; };
+		858ABE8F2409773B00CDD109 /* SeriesListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesListPresenter.swift; sourceTree = "<group>"; };
+		858ABE912409774D00CDD109 /* SeriesListPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesListPresenterImpl.swift; sourceTree = "<group>"; };
+		858ABE93240977F000CDD109 /* SeriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesListViewController.swift; sourceTree = "<group>"; };
+		858ABE94240977F000CDD109 /* SeriesListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeriesListViewController.xib; sourceTree = "<group>"; };
+		858ABE982409792900CDD109 /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
+		858ABE9A240979B400CDD109 /* SeriesListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesListFactory.swift; sourceTree = "<group>"; };
+		858ABE9C2409839600CDD109 /* SeriesListViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesListViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +101,8 @@
 		8510640324096D1700CD6B51 /* TechnicalTest */ = {
 			isa = PBXGroup;
 			children = (
+				858ABE7A2409757300CDD109 /* Core */,
+				858ABE97240978DC00CDD109 /* Shared Protocols */,
 				8510640424096D1700CD6B51 /* AppDelegate.swift */,
 				8510640624096D1700CD6B51 /* SceneDelegate.swift */,
 				8510640D24096D1A00CD6B51 /* Assets.xcassets */,
@@ -91,6 +119,97 @@
 				8510641D24096D1A00CD6B51 /* Info.plist */,
 			);
 			path = TechnicalTestTests;
+			sourceTree = "<group>";
+		};
+		858ABE7A2409757300CDD109 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				858ABE7B2409758200CDD109 /* SeriesList */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		858ABE7B2409758200CDD109 /* SeriesList */ = {
+			isa = PBXGroup;
+			children = (
+				858ABE822409764200CDD109 /* DataProvider */,
+				858ABE812409763000CDD109 /* Factory */,
+				858ABE80240975CB00CDD109 /* Entities */,
+				858ABE7F240975C100CDD109 /* View */,
+				858ABE7E240975BA00CDD109 /* Router */,
+				858ABE7D240975B300CDD109 /* Interactor */,
+				858ABE7C240975AE00CDD109 /* Presenter */,
+			);
+			path = SeriesList;
+			sourceTree = "<group>";
+		};
+		858ABE7C240975AE00CDD109 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				858ABE8F2409773B00CDD109 /* SeriesListPresenter.swift */,
+				858ABE912409774D00CDD109 /* SeriesListPresenterImpl.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		858ABE7D240975B300CDD109 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				858ABE8B2409770300CDD109 /* SeriesListInteractor.swift */,
+				858ABE8D2409771600CDD109 /* SeriesListInteractorImpl.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		858ABE7E240975BA00CDD109 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				858ABE87240976D400CDD109 /* SeriesListRouter.swift */,
+				858ABE89240976DD00CDD109 /* SeriesListRouterImpl.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		858ABE7F240975C100CDD109 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				858ABE93240977F000CDD109 /* SeriesListViewController.swift */,
+				858ABE94240977F000CDD109 /* SeriesListViewController.xib */,
+				858ABE9C2409839600CDD109 /* SeriesListViewDelegate.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		858ABE80240975CB00CDD109 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		858ABE812409763000CDD109 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				858ABE9A240979B400CDD109 /* SeriesListFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		858ABE822409764200CDD109 /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				858ABE832409768F00CDD109 /* SeriesListDataProvider.swift */,
+				858ABE852409769800CDD109 /* SeriesListDataProviderImpl.swift */,
+			);
+			path = DataProvider;
+			sourceTree = "<group>";
+		};
+		858ABE97240978DC00CDD109 /* Shared Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				858ABE982409792900CDD109 /* Factory.swift */,
+			);
+			path = "Shared Protocols";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +295,7 @@
 			files = (
 				8510641124096D1A00CD6B51 /* LaunchScreen.storyboard in Resources */,
 				8510640E24096D1A00CD6B51 /* Assets.xcassets in Resources */,
+				858ABE96240977F000CDD109 /* SeriesListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,8 +313,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				858ABE95240977F000CDD109 /* SeriesListViewController.swift in Sources */,
+				858ABE9B240979B400CDD109 /* SeriesListFactory.swift in Sources */,
+				858ABE8C2409770300CDD109 /* SeriesListInteractor.swift in Sources */,
 				8510640524096D1700CD6B51 /* AppDelegate.swift in Sources */,
 				8510640724096D1700CD6B51 /* SceneDelegate.swift in Sources */,
+				858ABE922409774D00CDD109 /* SeriesListPresenterImpl.swift in Sources */,
+				858ABE902409773B00CDD109 /* SeriesListPresenter.swift in Sources */,
+				858ABE862409769800CDD109 /* SeriesListDataProviderImpl.swift in Sources */,
+				858ABE8A240976DD00CDD109 /* SeriesListRouterImpl.swift in Sources */,
+				858ABE992409792900CDD109 /* Factory.swift in Sources */,
+				858ABE8E2409771600CDD109 /* SeriesListInteractorImpl.swift in Sources */,
+				858ABE9D2409839600CDD109 /* SeriesListViewDelegate.swift in Sources */,
+				858ABE88240976D400CDD109 /* SeriesListRouter.swift in Sources */,
+				858ABE842409768F00CDD109 /* SeriesListDataProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
