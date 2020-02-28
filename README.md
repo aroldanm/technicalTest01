@@ -17,7 +17,7 @@ Para el detalle de cada serie:
 - Se debe mostrar imagen, nombre, puntuación y sinopsis
 
 ### Tecnología
-**Lenguaje:** Swift 4.2.1  
+**Lenguaje:** Swift 5  
 **Entorno:** Xcode 11.3.1
 
 ### Dependencias
