@@ -1,12 +1,12 @@
 //
-//  Serie.swift
+//  Product.swift
 //  TechnicalTest
 //
 //  Created by Alan Roldán Maillo on 29/02/2020.
 //  Copyright © 2020 Alan Roldán Maillo. All rights reserved.
 //
 
-struct Serie {
+struct Product {
     private(set) var id: Int
     private(set) var name: String
     private(set) var summary: String

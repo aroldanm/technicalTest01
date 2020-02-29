@@ -1,12 +1,12 @@
 //
-//  SeriesItem.swift
+//  Product.swift
 //  TechnicalTest
 //
 //  Created by Alan Roldán Maillo on 29/02/2020.
 //  Copyright © 2020 Alan Roldán Maillo. All rights reserved.
 //
 
-struct SeriesItem: Codable {
+struct ProductEntity: Codable {
     var id: Int?
     var url: String?
     var name: String?
@@ -28,7 +28,7 @@ struct SeriesItem: Codable {
     var updated: Int?
 }
 
-extension SeriesItem {
+extension ProductEntity {
     struct Rating: Codable {
         var average: Float?
     }

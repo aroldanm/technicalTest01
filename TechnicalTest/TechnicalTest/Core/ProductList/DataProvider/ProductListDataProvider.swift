@@ -1,5 +1,5 @@
 //
-//  SeriesListDataProvider.swift
+//  ProductListDataProvider.swift
 //  TechnicalTest
 //
 //  Created by Alan Roldán Maillo on 28/02/2020.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-protocol SeriesListDataProvider {
-    typealias Success = (SeriesList) -> Void
+protocol ProductListDataProvider {
+    typealias Success = (Products) -> Void
     typealias Failure = (RequestError) -> Void
 
-    func request(_ request: SeriesListRequest, success: @escaping Success, failure: @escaping Failure)
+    func request(_ request: ProductListRequest, success: @escaping Success, failure: @escaping Failure)
 }
 
 enum RequestError: Error {
