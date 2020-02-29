@@ -9,12 +9,6 @@
 import Foundation
 
 class ProductListDataProviderImpl: ProductListDataProvider {
-    private let adapter: ProductListAdapter
-
-    init(adapter: ProductListAdapter) {
-        self.adapter = adapter
-    }
-
     func request(_ request: ProductListRequest, success: @escaping Success, failure: @escaping Failure) {
         let pathUrl = configurePath(index: request.page)
         guard let url = URL(string: pathUrl) else {
@@ -54,7 +48,7 @@ private extension ProductListDataProviderImpl {
 
             do {
                 let response = try ProductListResponse(data: data)
-                success(self.adapter.toDomain(from: response))
+                success(ProductListAdapter.toDomain(from: response))
             } catch {
                 failure(.invalidResponse(error))
             }
