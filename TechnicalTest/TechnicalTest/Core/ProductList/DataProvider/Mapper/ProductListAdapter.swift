@@ -21,7 +21,7 @@ class ProductListAdapter {
 }
 
 private extension ProductListAdapter {
-    class func toSerie(from item: SeriesItem) -> Serie? {
+    class func toSerie(from item: Product) -> Serie? {
         guard let id = item.id ,
             let name = item.name,
             let summary = item.summary,

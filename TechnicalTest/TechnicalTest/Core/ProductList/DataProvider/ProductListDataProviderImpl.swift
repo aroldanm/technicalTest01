@@ -48,7 +48,7 @@ private extension ProductListDataProviderImpl {
 
             do {
                 let response = try ProductListResponse(data: data)
-                success(SeriesListAdapter.toDomain(from: response))
+                success(ProductListAdapter.toDomain(from: response))
             } catch {
                 failure(.invalidResponse(error))
             }
