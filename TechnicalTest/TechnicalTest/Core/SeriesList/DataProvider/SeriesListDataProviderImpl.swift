@@ -48,7 +48,7 @@ private extension SeriesListDataProviderImpl {
 
             do {
                 let response = try SeriesListResponse(data: data)
-                success(response)
+                success(SeriesListAdapter.toDomain(from: response))
             } catch {
                 failure(.invalidResponse(error))
             }

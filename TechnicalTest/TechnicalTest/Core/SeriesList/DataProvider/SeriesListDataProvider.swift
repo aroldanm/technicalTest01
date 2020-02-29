@@ -9,7 +9,7 @@
 import Foundation
 
 protocol SeriesListDataProvider {
-    typealias Success = (SeriesListResponse) -> Void
+    typealias Success = (SeriesList) -> Void
     typealias Failure = (RequestError) -> Void
 
     func request(_ request: SeriesListRequest, success: @escaping Success, failure: @escaping Failure)

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SeriesListResponse {
+struct SeriesListResponse {
     var list: [SeriesItem]?
 
     init(data: Data) throws {
