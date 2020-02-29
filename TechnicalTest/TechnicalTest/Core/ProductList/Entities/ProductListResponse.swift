@@ -9,9 +9,9 @@
 import Foundation
 
 struct ProductListResponse {
-    var list: [Product]?
+    var list: [ProductEntity]?
 
     init(data: Data) throws {
-        list = try JSONDecoder().decode(Array<Product>.self, from: data)
+        list = try JSONDecoder().decode(Array<ProductEntity>.self, from: data)
     }
 }

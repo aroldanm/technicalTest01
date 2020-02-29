@@ -11,7 +11,8 @@ import UIKit
 class ProductListFactory: Factory {
     private static var viewController: UIViewController {
         let viewController = ProductListViewController()
-        let dataProvider = ProductListDataProviderImpl()
+        let adapter = ProductListAdapterImpl()
+        let dataProvider = ProductListDataProviderImpl(adapter: adapter)
         let interactor = ProductListInteractorImpl(dataProvider: dataProvider)
         let router = ProductListRouterImpl()
         let presenter = ProductListPresenterImpl(interactor: interactor,
