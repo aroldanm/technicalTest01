@@ -47,10 +47,11 @@ private extension SeriesListDataProviderImpl {
             }
 
             do {
-                //Successful
-                let json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! NSArray
-                print(json)
-            } catch { }
+                let response = try SeriesListResponse(data: data)
+                success(response)
+            } catch {
+                failure(.invalidResponse(error))
+            }
         }
         task.resume()
     }

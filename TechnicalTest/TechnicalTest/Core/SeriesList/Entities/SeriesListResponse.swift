@@ -6,5 +6,12 @@
 //  Copyright © 2020 Alan Roldán Maillo. All rights reserved.
 //
 
-struct SeriesListResponse {
+import Foundation
+
+class SeriesListResponse {
+    var list: [SeriesItem]?
+
+    init(data: Data) throws {
+        list = try JSONDecoder().decode(Array<SeriesItem>.self, from: data)
+    }
 }

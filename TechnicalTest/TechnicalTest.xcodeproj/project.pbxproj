@@ -27,6 +27,7 @@
 		858ABE9D2409839600CDD109 /* SeriesListViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858ABE9C2409839600CDD109 /* SeriesListViewDelegate.swift */; };
 		858ABEA024098B8800CDD109 /* SeriesListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858ABE9F24098B8800CDD109 /* SeriesListRequest.swift */; };
 		858ABEA224098BB500CDD109 /* SeriesListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858ABEA124098BB500CDD109 /* SeriesListResponse.swift */; };
+		858ABEAA240A636300CDD109 /* SeriesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858ABEA9240A636300CDD109 /* SeriesItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		858ABE9C2409839600CDD109 /* SeriesListViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesListViewDelegate.swift; sourceTree = "<group>"; };
 		858ABE9F24098B8800CDD109 /* SeriesListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesListRequest.swift; sourceTree = "<group>"; };
 		858ABEA124098BB500CDD109 /* SeriesListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesListResponse.swift; sourceTree = "<group>"; };
+		858ABEA9240A636300CDD109 /* SeriesItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,9 @@
 		858ABE80240975CB00CDD109 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				858ABE9F24098B8800CDD109 /* SeriesListRequest.swift */,
+				858ABEA124098BB500CDD109 /* SeriesListResponse.swift */,
+				858ABEA9240A636300CDD109 /* SeriesItem.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -202,7 +207,6 @@
 		858ABE822409764200CDD109 /* DataProvider */ = {
 			isa = PBXGroup;
 			children = (
-				858ABE9E24098B6900CDD109 /* Model */,
 				858ABE832409768F00CDD109 /* SeriesListDataProvider.swift */,
 				858ABE852409769800CDD109 /* SeriesListDataProviderImpl.swift */,
 			);
@@ -215,15 +219,6 @@
 				858ABE982409792900CDD109 /* Factory.swift */,
 			);
 			path = "Shared Protocols";
-			sourceTree = "<group>";
-		};
-		858ABE9E24098B6900CDD109 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				858ABE9F24098B8800CDD109 /* SeriesListRequest.swift */,
-				858ABEA124098BB500CDD109 /* SeriesListResponse.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,6 +324,7 @@
 			files = (
 				858ABE95240977F000CDD109 /* SeriesListViewController.swift in Sources */,
 				858ABEA024098B8800CDD109 /* SeriesListRequest.swift in Sources */,
+				858ABEAA240A636300CDD109 /* SeriesItem.swift in Sources */,
 				858ABE9B240979B400CDD109 /* SeriesListFactory.swift in Sources */,
 				858ABE8C2409770300CDD109 /* SeriesListInteractor.swift in Sources */,
 				8510640524096D1700CD6B51 /* AppDelegate.swift in Sources */,
