@@ -1,13 +1,13 @@
 //
-//  SeriesListAdapter.swift
+//  ProductListAdapter.swift
 //  TechnicalTest
 //
 //  Created by Alan Roldán Maillo on 29/02/2020.
 //  Copyright © 2020 Alan Roldán Maillo. All rights reserved.
 //
 
-class SeriesListAdapter {
-    class func toDomain(from response: SeriesListResponse) -> SeriesList {
+class ProductListAdapter {
+    class func toDomain(from response: ProductListResponse) -> SeriesList {
         var seriesList = SeriesList()
         if let list = response.list {
             list.forEach { item in
@@ -20,8 +20,8 @@ class SeriesListAdapter {
     }
 }
 
-private extension SeriesListAdapter {
-    class func toSerie(from item: SeriesItem) -> Serie? {
+private extension ProductListAdapter {
+    class func toSerie(from item: Product) -> Serie? {
         guard let id = item.id ,
             let name = item.name,
             let summary = item.summary,

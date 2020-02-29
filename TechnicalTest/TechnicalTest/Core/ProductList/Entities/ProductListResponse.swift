@@ -1,5 +1,5 @@
 //
-//  SeriesListResponse.swift
+//  ProductListResponse.swift
 //  TechnicalTest
 //
 //  Created by Alan Roldán Maillo on 28/02/2020.
@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct SeriesListResponse {
-    var list: [SeriesItem]?
+struct ProductListResponse {
+    var list: [Product]?
 
     init(data: Data) throws {
-        list = try JSONDecoder().decode(Array<SeriesItem>.self, from: data)
+        list = try JSONDecoder().decode(Array<Product>.self, from: data)
     }
 }

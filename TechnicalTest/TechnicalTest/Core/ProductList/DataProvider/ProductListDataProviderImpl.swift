@@ -1,5 +1,5 @@
 //
-//  SeriesListDataProviderImpl.swift
+//  ProductListDataProviderImpl.swift
 //  TechnicalTest
 //
 //  Created by Alan Roldán Maillo on 28/02/2020.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-class SeriesListDataProviderImpl: SeriesListDataProvider {
-    func request(_ request: SeriesListRequest, success: @escaping Success, failure: @escaping Failure) {
+class ProductListDataProviderImpl: ProductListDataProvider {
+    func request(_ request: ProductListRequest, success: @escaping Success, failure: @escaping Failure) {
         let pathUrl = configurePath(index: request.page)
         guard let url = URL(string: pathUrl) else {
             failure(.invalidUrl)
@@ -21,7 +21,7 @@ class SeriesListDataProviderImpl: SeriesListDataProvider {
     }
 }
 
-private extension SeriesListDataProviderImpl {
+private extension ProductListDataProviderImpl {
     enum Constants {
         static let method = "GET"
         static let baseUrl = "http://api.tvmaze.com/shows"
@@ -47,8 +47,8 @@ private extension SeriesListDataProviderImpl {
             }
 
             do {
-                let response = try SeriesListResponse(data: data)
-                success(SeriesListAdapter.toDomain(from: response))
+                let response = try ProductListResponse(data: data)
+                success(ProductListAdapter.toDomain(from: response))
             } catch {
                 failure(.invalidResponse(error))
             }

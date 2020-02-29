@@ -54,7 +54,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 private extension SceneDelegate {
     func configure(with scene: UIWindowScene) {
         let window = UIWindow(windowScene: scene)
-        let viewController = SeriesListFactory.make()
+        let viewController = ProductListFactory.make()
         window.rootViewController = viewController
         self.window = window
         window.makeKeyAndVisible()
