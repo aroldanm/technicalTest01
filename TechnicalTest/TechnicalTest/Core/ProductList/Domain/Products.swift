@@ -12,4 +12,8 @@ struct Products {
     mutating func append(_ product: Product) {
         list.append(product)
     }
+
+    mutating func append(products: [Product]) {
+        list.append(contentsOf: products)
+    }
 }
