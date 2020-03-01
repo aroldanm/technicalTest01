@@ -33,7 +33,11 @@ private extension ProductListDataProviderImpl {
     }
 
     func doTask(_ request: URLRequest, success: @escaping Success, failure: @escaping Failure) {
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        let config = URLSessionConfiguration.default
+        config.requestCachePolicy = .reloadIgnoringLocalCacheData
+        config.urlCache = nil
+        let session = URLSession(configuration: config)
+        let task = session.dataTask(with: request) { data, response, error in
             guard let data = data,
                 error == nil else {
                     failure(.unknown(error))
