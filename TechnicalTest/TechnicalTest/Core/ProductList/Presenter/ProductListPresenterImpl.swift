@@ -6,7 +6,7 @@
 //  Copyright © 2020 Alan Roldán Maillo. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class ProductListPresenterImpl {
     private let interactor: ProductListInteractor
@@ -42,6 +42,12 @@ extension ProductListPresenterImpl: ProductListPresenter {
             }, failure: nil)
         } else {
             loadItems()
+        }
+    }
+
+    func select(item: Product) {
+        if let viewController = delegate as? UIViewController {
+            router.navigateToDetail(with: item, from: viewController)
         }
     }
 }

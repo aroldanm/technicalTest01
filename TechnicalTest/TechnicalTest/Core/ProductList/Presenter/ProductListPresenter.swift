@@ -10,6 +10,8 @@ protocol ProductListPresenter {
     var titleView: String { get }
     var emptyLabel: String { get }
     var loadingLabel: String { get }
+
     func loadItems()
     func loadMoreItems()
+    func select(item: Product)
 }

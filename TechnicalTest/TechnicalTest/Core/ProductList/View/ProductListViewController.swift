@@ -94,6 +94,10 @@ extension ProductListViewController: UITableViewDataSource {
 extension ProductListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if let viewModel = viewModel {
+            let product = viewModel.products[indexPath.row]
+            presenter?.select(item: product)
+        }
     }
 }
 
