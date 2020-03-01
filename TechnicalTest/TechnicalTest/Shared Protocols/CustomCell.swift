@@ -1,5 +1,5 @@
 //
-//  ProductListViewModel.swift
+//  CustomCell.swift
 //  TechnicalTest
 //
 //  Created by Alan Roldán Maillo on 01/03/2020.
@@ -8,8 +8,6 @@
 
 import UIKit
 
-struct ProductListViewModel {
-    var products: [Product]
-    var shouldPaginate: Bool
-    var numberOfSections: Int
+protocol CustomCell {
+    static var identifier: String { get }
 }

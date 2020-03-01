@@ -8,8 +8,7 @@
 
 class ProductListInteractorImpl {
     private let dataProvider: ProductListDataProvider
-
-    let shouldPaginate = false
+    let shouldPaginate = true
 
     init(dataProvider: ProductListDataProvider) {
         self.dataProvider = dataProvider
@@ -23,7 +22,7 @@ extension ProductListInteractorImpl: ProductListInteractor {
 
     func loadMoreProducts(from current: Products, success: @escaping Success, failure: Failure?) {
         let lastProductId = current.list.last?.id ?? Constants.defaultProductId
-        let page = Int(lastProductId/Constants.productsBatch)
+        let page = lastProductId != 0 ? Int(lastProductId/Constants.productsBatch)+1 : 0
         requestProducts(page: page, success: { products in
             success(Products(list: (current.list) + products.list))
         }, failure: failure)
