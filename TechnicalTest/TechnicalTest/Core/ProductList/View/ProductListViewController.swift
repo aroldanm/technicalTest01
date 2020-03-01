@@ -41,6 +41,18 @@ class ProductListViewController: UIViewController {
         super.viewDidLoad()
         setup()
     }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let height = scrollView.frame.height
+
+        if offsetY > 0,
+            offsetY > contentHeight - height,
+            shouldfetchMore {
+            beginBatchFetch()
+        }
+    }
 }
 
 extension ProductListViewController: UITableViewDataSource {
@@ -91,20 +103,6 @@ extension ProductListViewController: ProductListViewDelegate {
         fetchingMore = false
         DispatchQueue.main.async {
             self.reloadData()
-        }
-    }
-}
-
-extension ProductListViewController {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offsetY = scrollView.contentOffset.y
-        let contentHeight = scrollView.contentSize.height
-        let height = scrollView.frame.height
-
-        if offsetY > 0,
-            offsetY > contentHeight - height,
-            shouldfetchMore {
-            beginBatchFetch()
         }
     }
 }
