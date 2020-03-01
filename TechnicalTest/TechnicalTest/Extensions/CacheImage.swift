@@ -11,8 +11,8 @@ import UIKit
 let imageCache = NSCache<NSString, AnyObject>()
 
 extension UIImageView {
-    func load(from url: URL) {
-        self.image = nil
+    func load(from url: URL, with placeholder: UIImage? = nil) {
+        self.image = placeholder
         if let cachedImage = imageCache.object(forKey: url.absoluteString as NSString) as? UIImage {
             self.image = cachedImage
             return
