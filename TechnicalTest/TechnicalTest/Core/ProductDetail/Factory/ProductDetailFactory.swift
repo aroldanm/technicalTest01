@@ -9,11 +9,11 @@
 import UIKit
 
 class ProductDetailFactory {
-    private static var viewController:  UIViewController {
-        return UIViewController()
-    }
-
     static func make(with product: Product) -> UIViewController {
+        let viewController = ProductDetailViewController()
+        let presenter = ProductDetailPresenterImpl(product: product,
+                                                   delegate: viewController)
+        viewController.presenter = presenter
         return viewController
     }
 }
