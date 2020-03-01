@@ -17,17 +17,19 @@ class ProductDetailPresenterImpl {
 }
 
 extension ProductDetailPresenterImpl: ProductDetailPresenter {
-    func loadData() {
-        let viewModel = makeViewModel()
-        delegate?.updateView(with: viewModel)
+    func loadData() -> ProductDetailViewModel {
+        return makeViewModel()
     }
 }
 
 private extension ProductDetailPresenterImpl {
     func makeViewModel() -> ProductDetailViewModel {
+        let genres = product.genres.joined(separator: " • ")
         return ProductDetailViewModel(title: product.name,
                                       summary: product.summary,
                                       image: product.imageUrl.original ?? "",
-                                      rating: product.rating)
+                                      preview: product.imageUrl.medium ?? "",
+                                      rating: product.rating,
+                                      genres: genres)
     }
 }
