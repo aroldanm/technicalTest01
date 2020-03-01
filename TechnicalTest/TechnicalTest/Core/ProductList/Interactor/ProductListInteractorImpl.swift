@@ -9,6 +9,8 @@
 class ProductListInteractorImpl {
     private let dataProvider: ProductListDataProvider
 
+    let shouldPaginate = false
+
     init(dataProvider: ProductListDataProvider) {
         self.dataProvider = dataProvider
     }

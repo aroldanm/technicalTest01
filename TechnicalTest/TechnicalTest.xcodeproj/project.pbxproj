@@ -15,6 +15,7 @@
 		858A0ECA240AC8B0005922D8 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858A0EC8240AC8B0005922D8 /* ProductListViewController.swift */; };
 		858A0ECB240AC8B0005922D8 /* ProductListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 858A0EC9240AC8B0005922D8 /* ProductListViewController.xib */; };
 		858A0ECD240AD40D005922D8 /* ProductListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858A0ECC240AD40D005922D8 /* ProductListAdapter.swift */; };
+		858A0ED1240B523E005922D8 /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858A0ED0240B523E005922D8 /* ProductListViewModel.swift */; };
 		858ABE842409768F00CDD109 /* ProductListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858ABE832409768F00CDD109 /* ProductListDataProvider.swift */; };
 		858ABE862409769800CDD109 /* ProductListDataProviderImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858ABE852409769800CDD109 /* ProductListDataProviderImpl.swift */; };
 		858ABE88240976D400CDD109 /* ProductListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858ABE87240976D400CDD109 /* ProductListRouter.swift */; };
@@ -56,6 +57,7 @@
 		858A0EC8240AC8B0005922D8 /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 		858A0EC9240AC8B0005922D8 /* ProductListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListViewController.xib; sourceTree = "<group>"; };
 		858A0ECC240AD40D005922D8 /* ProductListAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListAdapter.swift; sourceTree = "<group>"; };
+		858A0ED0240B523E005922D8 /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
 		858ABE832409768F00CDD109 /* ProductListDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListDataProvider.swift; sourceTree = "<group>"; };
 		858ABE852409769800CDD109 /* ProductListDataProviderImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListDataProviderImpl.swift; sourceTree = "<group>"; };
 		858ABE87240976D400CDD109 /* ProductListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListRouter.swift; sourceTree = "<group>"; };
@@ -133,6 +135,14 @@
 			path = TechnicalTestTests;
 			sourceTree = "<group>";
 		};
+		858A0ECF240B5228005922D8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				858A0ED0240B523E005922D8 /* ProductListViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		858ABE7A2409757300CDD109 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +158,7 @@
 				858ABE812409763000CDD109 /* Factory */,
 				858ABEAB240A800500CDD109 /* Domain */,
 				858ABE80240975CB00CDD109 /* Entities */,
+				858A0ECF240B5228005922D8 /* Model */,
 				858ABE7F240975C100CDD109 /* View */,
 				858ABE7E240975BA00CDD109 /* Router */,
 				858ABE7D240975B300CDD109 /* Interactor */,
@@ -364,6 +375,7 @@
 				858ABE8E2409771600CDD109 /* ProductListInteractorImpl.swift in Sources */,
 				858A0ECA240AC8B0005922D8 /* ProductListViewController.swift in Sources */,
 				858A0ECD240AD40D005922D8 /* ProductListAdapter.swift in Sources */,
+				858A0ED1240B523E005922D8 /* ProductListViewModel.swift in Sources */,
 				858ABE9D2409839600CDD109 /* ProductListViewDelegate.swift in Sources */,
 				858ABE88240976D400CDD109 /* ProductListRouter.swift in Sources */,
 				858ABE842409768F00CDD109 /* ProductListDataProvider.swift in Sources */,
