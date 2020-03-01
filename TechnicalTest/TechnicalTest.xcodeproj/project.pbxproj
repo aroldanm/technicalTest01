@@ -120,8 +120,7 @@
 			children = (
 				858ABE7A2409757300CDD109 /* Core */,
 				858ABE97240978DC00CDD109 /* Shared Protocols */,
-				8510640424096D1700CD6B51 /* AppDelegate.swift */,
-				8510640624096D1700CD6B51 /* SceneDelegate.swift */,
+				858A0EDC240B6942005922D8 /* Application */,
 				8510640D24096D1A00CD6B51 /* Assets.xcassets */,
 				8510640F24096D1A00CD6B51 /* LaunchScreen.storyboard */,
 				8510641224096D1A00CD6B51 /* Info.plist */,
@@ -145,6 +144,15 @@
 				858A0ED0240B523E005922D8 /* ProductListViewModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		858A0EDC240B6942005922D8 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				8510640424096D1700CD6B51 /* AppDelegate.swift */,
+				8510640624096D1700CD6B51 /* SceneDelegate.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 		858ABE7A2409757300CDD109 /* Core */ = {
