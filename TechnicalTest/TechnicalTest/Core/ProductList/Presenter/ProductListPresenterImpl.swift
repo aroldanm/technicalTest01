@@ -15,6 +15,8 @@ class ProductListPresenterImpl {
     private var products: Products?
 
     private(set) var titleView = NSLocalizedString("ProductList.title", comment: "title")
+    private(set) var emptyLabel = NSLocalizedString("ProductList.emptyLabel", comment: "empty")
+    private(set) var loadingLabel = NSLocalizedString("ProductList.gettingData", comment: "loading")
 
     init(interactor: ProductListInteractor, router: ProductListRouter, delegate: ProductListViewDelegate? = nil) {
         self.interactor = interactor

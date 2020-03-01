@@ -7,3 +7,5 @@
 */
 
 "ProductList.title" = "Listado de series";
+"ProductList.emptyLabel" = "¡Vaya! algo no va bien, prueba de nuevo más tarde";
+"ProductList.gettingData" = "Cargando...";
