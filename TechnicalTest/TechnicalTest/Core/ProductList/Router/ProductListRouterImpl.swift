@@ -11,6 +11,6 @@ import UIKit
 class ProductListRouterImpl: ProductListRouter {
     func navigateToDetail(with product: Product, from viewController: UIViewController) {
         let destination = ProductDetailFactory.make(with: product)
-        viewController.navigationController?.pushViewController(destination, animated: true)
+        viewController.present(destination, animated: true, completion: nil)
     }
 }
