@@ -9,7 +9,9 @@
 protocol ProductListInteractor {
     typealias Success = (Products) -> Void
     typealias Failure = (Error) -> Void
-    
+
+    var shouldPaginate: Bool { get }
+
     func loadProducts(success: @escaping Success, failure: Failure?)
     func loadMoreProducts(from current: Products,
                           success: @escaping Success, failure: Failure?)

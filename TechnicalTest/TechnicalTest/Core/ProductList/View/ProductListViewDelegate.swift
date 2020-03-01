@@ -7,4 +7,5 @@
 //
 
 protocol ProductListViewDelegate: AnyObject {
+    func updateView(with model: ProductListViewModel)
 }
