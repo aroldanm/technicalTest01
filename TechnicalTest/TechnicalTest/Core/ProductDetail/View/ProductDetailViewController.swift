@@ -14,8 +14,27 @@ class ProductDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        reloadData()
     }
 }
 
 extension ProductDetailViewController: ProductDetailViewDelegate {
+    func updateView(with model: ProductDetailViewModel) {
+        viewModel = model
+        DispatchQueue.main.async {
+            self.setupView()
+        }
+    }
+}
+
+private extension ProductDetailViewController {
+    func reloadData() {
+        presenter?.loadData()
+    }
+
+    func setupView() {
+        guard let viewModel = viewModel else {
+            return
+        }
+    }
 }
