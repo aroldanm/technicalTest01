@@ -6,5 +6,8 @@
 //  Copyright © 2020 Alan Roldán Maillo. All rights reserved.
 //
 
+import UIKit
+
 protocol ProductListRouter {
+    func navigateToDetail(with product: Product, from viewController: UIViewController)
 }
