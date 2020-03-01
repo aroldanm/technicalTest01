@@ -11,4 +11,5 @@ import UIKit
 struct ProductListViewModel {
     var products: [Product]
     var shouldPaginate: Bool
+    var numberOfSections: Int
 }

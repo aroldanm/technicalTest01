@@ -201,9 +201,9 @@
 		858ABE7F240975C100CDD109 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				858ABE9C2409839600CDD109 /* ProductListViewDelegate.swift */,
 				858A0EC8240AC8B0005922D8 /* ProductListViewController.swift */,
 				858A0EC9240AC8B0005922D8 /* ProductListViewController.xib */,
+				858ABE9C2409839600CDD109 /* ProductListViewDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

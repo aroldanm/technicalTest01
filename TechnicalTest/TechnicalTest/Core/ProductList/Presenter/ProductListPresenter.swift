@@ -7,6 +7,7 @@
 //
 
 protocol ProductListPresenter {
+    var titleView: String { get }
     func loadItems()
     func loadMoreItems()
 }
