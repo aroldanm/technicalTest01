@@ -21,6 +21,8 @@
                     </activityIndicatorView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="xh4-wn-Oks" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="8lJ-1c-pTy"/>
+                    <constraint firstAttribute="bottom" secondItem="xh4-wn-Oks" secondAttribute="bottom" constant="12" id="cJV-qp-8oQ"/>
                     <constraint firstItem="xh4-wn-Oks" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="qgs-5L-no3"/>
                     <constraint firstItem="xh4-wn-Oks" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="rKS-Ra-ITL"/>
                 </constraints>

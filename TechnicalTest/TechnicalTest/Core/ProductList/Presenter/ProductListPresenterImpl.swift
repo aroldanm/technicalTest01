@@ -57,6 +57,6 @@ private extension ProductListPresenterImpl {
         let products = self.products?.list ?? Products().list
         return ProductListViewModel(products: products,
                                     shouldPaginate: interactor.shouldPaginate,
-                                    numberOfSections: 1)
+                                    numberOfSections: interactor.shouldPaginate ? 2 : 1)
     }
 }
