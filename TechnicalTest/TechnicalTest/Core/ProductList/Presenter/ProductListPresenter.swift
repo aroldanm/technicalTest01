@@ -7,4 +7,6 @@
 //
 
 protocol ProductListPresenter {
+    func loadItems()
+    func loadMoreItems()
 }

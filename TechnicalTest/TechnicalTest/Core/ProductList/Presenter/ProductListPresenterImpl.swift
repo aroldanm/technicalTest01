@@ -7,9 +7,10 @@
 //
 
 class ProductListPresenterImpl {
-    private weak var delegate: ProductListViewDelegate?
     private let interactor: ProductListInteractor
     private let router: ProductListRouter
+    private weak var delegate: ProductListViewDelegate?
+    private var products: Products?
 
     init(interactor: ProductListInteractor, router: ProductListRouter, delegate: ProductListViewDelegate? = nil) {
         self.interactor = interactor
@@ -19,4 +20,38 @@ class ProductListPresenterImpl {
 }
 
 extension ProductListPresenterImpl: ProductListPresenter {
+    func loadItems() {
+        interactor.loadProducts(success: { products in
+            self.update(with: products)
+        }, failure: { _ in
+            self.update()
+        })
+    }
+
+    func loadMoreItems() {
+        if let products = products {
+            interactor.loadMoreProducts(from: products,
+                                        success: { products in
+                                            self.update(with: products)
+            }, failure: nil)
+        } else {
+            loadItems()
+        }
+    }
+}
+
+private extension ProductListPresenterImpl {
+    func update(with products: Products? = nil) {
+        if let products = products {
+            self.products = products
+        }
+        let viewModel = makeViewModel()
+        delegate?.updateView(with: viewModel)
+    }
+
+    func makeViewModel() -> ProductListViewModel {
+        let products = self.products?.list ?? Products().list
+        return ProductListViewModel(products: products,
+                                    shouldPaginate: interactor.shouldPaginate)
+    }
 }
