@@ -18,7 +18,7 @@ class ProductListFactory: Factory {
                                                  router: router,
                                                  delegate: viewController)
         viewController.presenter = presenter
-        return viewController
+        return UINavigationController(rootViewController: viewController)
     }
 
     static func make() -> UIViewController {
