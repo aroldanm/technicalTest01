@@ -2,7 +2,7 @@
     
 package List {
 
-    class Serie {
+    class Product {
         + id: Int
         + url: String
         + name: String
@@ -11,77 +11,77 @@ package List {
         + summary: String
     }
 
-    class SeriesListViewController {
+    class ProductListViewController {
     }
     
-    class SeriesListViewModel {
-        + series: [Serie]
+    class ProductListViewModel {
+        + Product: [Product]
         + shouldPaginate: Bool
     }
     
-    class SeriesListRequest {
+    class ProductListRequest {
         + pag: Int
     }
     
-    class SeriesListResponse {
-        + series: [Serie]
+    class ProductListResponse {
+        + Product: [Product]
     }
     
-    interface SeriesListPresenter {
+    interface ProductListPresenter {
     }
-    class SeriesListPresenterImpl
-    SeriesListPresenter <|.. SeriesListPresenterImpl
-    SeriesListViewController -left-> SeriesListPresenter: use
-    SeriesListViewController -right-> SeriesListViewModel: use
+    class ProductListPresenterImpl
+    ProductListPresenter <|.. ProductListPresenterImpl
+    ProductListViewController -left-> ProductListPresenter: use
+    ProductListViewController -right-> ProductListViewModel: use
     
-    interface SeriesListViewDelegate {
+    interface ProductListViewDelegate {
     }
-    SeriesListViewController .up.|> SeriesListViewDelegate
+    ProductListViewController .up.|> ProductListViewDelegate
     
-    interface SeriesListInteractor {
+    interface ProductListInteractor {
     }
-    class SeriesListInteractorImpl
-    SeriesListInteractor <|.. SeriesListInteractorImpl
-    SeriesListPresenterImpl -right-> SeriesListInteractor: use
+    class ProductListInteractorImpl
+    ProductListInteractor <|.. ProductListInteractorImpl
+    ProductListPresenterImpl -right-> ProductListInteractor: use
     
-    interface SeriesListDataProvider {
+    interface ProductListDataProvider {
     }
-    class SeriesListDataProviderImpl
-    SeriesListDataProvider <|.down. SeriesListDataProviderImpl
-    SeriesListInteractorImpl -> SeriesListDataProvider: use
-    SeriesListDataProviderImpl ..> SeriesListRequest
-    SeriesListDataProviderImpl ..> SeriesListResponse
+    class ProductListDataProviderImpl
+    ProductListDataProvider <|.down. ProductListDataProviderImpl
+    ProductListInteractorImpl -> ProductListDataProvider: use
+    ProductListDataProviderImpl ..> ProductListRequest
+    ProductListDataProviderImpl ..> ProductListResponse
     
     
-    interface SeriesListRouter {
+    interface ProductListRouter {
     }
-    class SeriesListRouterImpl
-    SeriesListRouter <|.. SeriesListRouterImpl
-    SeriesListPresenterImpl -left-> SeriesListRouter: use
+    class ProductListRouterImpl
+    ProductListRouter <|.. ProductListRouterImpl
+    ProductListPresenterImpl -left-> ProductListRouter: use
 }
 
 package Detail {
 
-    class SeriesDetailViewController {
+    class ProductDetailViewController {
     }
 
-    class SeriesDetailViewModel {
+    class ProductDetailViewModel {
         + name: String
         + image: String
         + rating: Float
         + summary: String
     }
-    SeriesDetailViewController -right-> SeriesDetailViewModel: use
+    ProductDetailViewController -right-> ProductDetailViewModel: use
     
-    interface SeriesDetailPresenter {
+    interface ProductDetailPresenter {
     }
-    class SeriesDetailPresenterImpl
-    SeriesDetailPresenter <|.. SeriesDetailPresenterImpl
-    SeriesDetailViewController --> SeriesDetailPresenter: use
+    class ProductDetailPresenterImpl
+    ProductDetailPresenter <|.. ProductDetailPresenterImpl
+    ProductDetailViewController --> ProductDetailPresenter: use
     
-    interface SeriesDetailViewDelegate {
+    interface ProductDetailViewDelegate {
     }
-    SeriesDetailViewDelegate <|.. SeriesDetailViewController
+    ProductDetailViewDelegate <|.. ProductDetailViewController
 }
 
 @enduml
