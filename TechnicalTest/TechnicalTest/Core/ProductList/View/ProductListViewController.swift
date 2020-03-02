@@ -101,7 +101,7 @@ extension ProductListViewController: UITableViewDelegate {
     }
 }
 
-extension ProductListViewController: ProductListViewDelegate {
+extension ProductListViewController: ProductListView {
     func updateView(with model: ProductListViewModel) {
         viewModel = model
         fetchingMore = false
@@ -183,7 +183,12 @@ private extension ProductListViewController {
     }
 
     func reloadData() {
-        tableView.backgroundView = emptyView
+        if let viewModel = viewModel,
+            !viewModel.products.isEmpty {
+            tableView.backgroundView = nil
+        } else {
+            tableView.backgroundView = emptyView
+        }
         tableView.reloadData()
     }
 
