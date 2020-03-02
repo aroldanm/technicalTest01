@@ -7,4 +7,5 @@
 //
 
 protocol ProductDetailPresenter {
+    func loadData() -> ProductDetailViewModel
 }

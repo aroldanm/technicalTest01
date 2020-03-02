@@ -18,6 +18,8 @@
 		8510640E24096D1A00CD6B51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8510640D24096D1A00CD6B51 /* Assets.xcassets */; };
 		8510641124096D1A00CD6B51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8510640F24096D1A00CD6B51 /* LaunchScreen.storyboard */; };
 		8510641C24096D1A00CD6B51 /* TechnicalTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8510641B24096D1A00CD6B51 /* TechnicalTestTests.swift */; };
+		8571CE66240C79460005DA5B /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8571CE65240C79460005DA5B /* RatingView.swift */; };
+		8571CE68240C7E3F0005DA5B /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8571CE67240C7E3F0005DA5B /* Label.swift */; };
 		858A0ECA240AC8B0005922D8 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858A0EC8240AC8B0005922D8 /* ProductListViewController.swift */; };
 		858A0ECB240AC8B0005922D8 /* ProductListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 858A0EC9240AC8B0005922D8 /* ProductListViewController.xib */; };
 		858A0ECD240AD40D005922D8 /* ProductListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858A0ECC240AD40D005922D8 /* ProductListAdapter.swift */; };
@@ -75,6 +77,8 @@
 		8510641724096D1A00CD6B51 /* TechnicalTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TechnicalTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8510641B24096D1A00CD6B51 /* TechnicalTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnicalTestTests.swift; sourceTree = "<group>"; };
 		8510641D24096D1A00CD6B51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8571CE65240C79460005DA5B /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		8571CE67240C7E3F0005DA5B /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		858A0EC8240AC8B0005922D8 /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 		858A0EC9240AC8B0005922D8 /* ProductListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListViewController.xib; sourceTree = "<group>"; };
 		858A0ECC240AD40D005922D8 /* ProductListAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListAdapter.swift; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 		850BA258240C2736009ABE17 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8571CE64240C79360005DA5B /* Rating */,
 				850BA25A240C276A009ABE17 /* ProductDetailViewController.swift */,
 				850BA25B240C276A009ABE17 /* ProductDetailViewController.xib */,
 				850BA25E240C278B009ABE17 /* ProductDetailViewDelegate.swift */,
@@ -195,6 +200,14 @@
 			path = TechnicalTestTests;
 			sourceTree = "<group>";
 		};
+		8571CE64240C79360005DA5B /* Rating */ = {
+			isa = PBXGroup;
+			children = (
+				8571CE65240C79460005DA5B /* RatingView.swift */,
+			);
+			path = Rating;
+			sourceTree = "<group>";
+		};
 		858A0ECF240B5228005922D8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				858A0EDD240B69E6005922D8 /* CacheImage.swift */,
+				8571CE67240C7E3F0005DA5B /* Label.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -489,6 +503,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8571CE66240C79460005DA5B /* RatingView.swift in Sources */,
 				858ABEA024098B8800CDD109 /* ProductListRequest.swift in Sources */,
 				858ABEAA240A636300CDD109 /* ProductEntity.swift in Sources */,
 				858ABE9B240979B400CDD109 /* ProductListFactory.swift in Sources */,
@@ -502,6 +517,7 @@
 				858ABE922409774D00CDD109 /* ProductListPresenterImpl.swift in Sources */,
 				858ABE902409773B00CDD109 /* ProductListPresenter.swift in Sources */,
 				858ABE862409769800CDD109 /* ProductListDataProviderImpl.swift in Sources */,
+				8571CE68240C7E3F0005DA5B /* Label.swift in Sources */,
 				858ABEA224098BB500CDD109 /* ProductListResponse.swift in Sources */,
 				850BA25C240C276A009ABE17 /* ProductDetailViewController.swift in Sources */,
 				858ABE8A240976DD00CDD109 /* ProductListRouterImpl.swift in Sources */,
