@@ -26,6 +26,7 @@ private extension ProductListAdapter {
             let name = item.name,
             let summary = item.summary,
             let imageMedium = item.image?.medium,
+            let genres = item.genres,
             let imageOriginal = item.image?.original else {
                 return nil
         }
@@ -34,6 +35,7 @@ private extension ProductListAdapter {
                        summary: summary,
                        imageUrl: Product.ImageURL(medium: imageMedium,
                                                   original: imageOriginal),
-                       rating: item.rating?.average ?? 0)
+                       rating: item.rating?.average ?? 0,
+                       genres: genres)
     }
 }
