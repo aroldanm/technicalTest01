@@ -26,9 +26,18 @@ class ProductDetailViewController: UIViewController {
         didSet {
             titleLabel.minimumScaleFactor = 0.65
             titleLabel.adjustsFontSizeToFitWidth = true
+            titleLabel.layer.shadowRadius = Constants.shadowRadius
+            titleLabel.layer.shadowOffset = Constants.shadowOffset
+            titleLabel.layer.shadowOpacity = Constants.shadowOpacity
         }
     }
-    @IBOutlet private weak var genresLabel: UILabel!
+    @IBOutlet private weak var genresLabel: UILabel! {
+        didSet {
+            genresLabel.layer.shadowRadius = Constants.shadowRadius
+            genresLabel.layer.shadowOffset = Constants.shadowOffset
+            genresLabel.layer.shadowOpacity = Constants.shadowOpacity
+        }
+    }
     @IBOutlet private weak var textView: UITextView! {
         didSet {
             textView.textContainerInset = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 12)
@@ -54,6 +63,9 @@ private extension ProductDetailViewController {
     enum Constants {
         static let black = "black"
         static let white = "white"
+        static let shadowRadius: CGFloat = 3
+        static let shadowOffset = CGSize(width: 1, height: 1)
+        static let shadowOpacity: Float = 0.4
     }
 
     func setupView() {
