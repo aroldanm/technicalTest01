@@ -31,13 +31,19 @@ class ProductDetailViewController: UIViewController {
     @IBOutlet private weak var genresLabel: UILabel!
     @IBOutlet private weak var textView: UITextView! {
         didSet {
-            textView.textContainerInset = UIEdgeInsets(top: 0, left: 12, bottom: 20, right: 12)
+            textView.textContainerInset = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 12)
         }
     }
+    @IBOutlet private weak var ratingView: RatingView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+    }
+
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        updateTextView(text: textView.text,
+                       userMode: newCollection.userInterfaceStyle)
     }
 }
 
@@ -45,6 +51,11 @@ extension ProductDetailViewController: ProductDetailViewDelegate {
 }
 
 private extension ProductDetailViewController {
+    enum Constants {
+        static let black = "black"
+        static let white = "white"
+    }
+
     func setupView() {
         guard let presenter = presenter else {
             return
@@ -52,21 +63,29 @@ private extension ProductDetailViewController {
         let viewModel = presenter.loadData()
         titleLabel.text = viewModel.title
         genresLabel.text = viewModel.genres
-        
-        if let attributedString = htmlAttributed(from: viewModel.summary) {
-            textView.attributedText = attributedString
-        }
+        ratingView.update(with: viewModel.rating, tint: .systemPink)
         if let url = URL(string: viewModel.preview) {
             imageBlurred.load(from: url)
         }
         if let url = URL(string: viewModel.image) {
             imageView.load(from: url)
         }
+        updateTextView(text: viewModel.summary,
+                       userMode: UIScreen.main.traitCollection.userInterfaceStyle)
     }
 
-    func htmlAttributed(from text: String) -> NSAttributedString? {
-        if let font = textView.font {
-            let modifiedFont = String(format:"<span style=\"font-family: '-apple-system', 'HelveticaNeue'; font-size: \(font.pointSize)\">%@</span>", text)
+    func updateTextView(text: String, userMode: UIUserInterfaceStyle) {
+        let color = userMode == .dark ? Constants.white : Constants.black
+        if let attributedString = htmlAttributed(from: text,
+                                                 color: color) {
+            textView.attributedText = attributedString
+        }
+    }
+
+    func htmlAttributed(from text: String,
+                        color: String? = Constants.black) -> NSAttributedString? {
+        if let font = textView.font, let color = color {
+            let modifiedFont = String(format:"<span style=\"font-family: '-apple-system', 'HelveticaNeue'; color: \(color); font-size: \(font.pointSize)\">%@</span>", text)
             if let data = modifiedFont.data(using: .unicode, allowLossyConversion: true) {
                 return try? NSAttributedString(data: data,options: [.documentType: NSAttributedString.DocumentType.html,.characterEncoding:String.Encoding.utf8.rawValue], documentAttributes: nil)
             }
