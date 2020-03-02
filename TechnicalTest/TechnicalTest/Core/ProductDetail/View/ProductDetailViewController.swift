@@ -56,7 +56,7 @@ class ProductDetailViewController: UIViewController {
     }
 }
 
-extension ProductDetailViewController: ProductDetailViewDelegate {
+extension ProductDetailViewController: ProductDetailView {
 }
 
 private extension ProductDetailViewController {

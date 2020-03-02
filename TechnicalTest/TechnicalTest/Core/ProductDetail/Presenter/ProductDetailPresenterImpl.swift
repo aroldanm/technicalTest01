@@ -6,13 +6,16 @@
 //  Copyright © 2020 Alan Roldán Maillo. All rights reserved.
 //
 
-class ProductDetailPresenterImpl {
-    private let product: Product
-    private weak var delegate: ProductDetailViewDelegate?
+import UIKit
 
-    init(product: Product, delegate: ProductDetailViewDelegate? = nil) {
+class ProductDetailPresenterImpl {
+    typealias View = (UIViewController & ProductDetailView)
+    private let product: Product
+    private weak var view: ProductDetailView?
+
+    init(product: Product, view: ProductDetailView? = nil) {
         self.product = product
-        self.delegate = delegate
+        self.view = view
     }
 }
 

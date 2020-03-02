@@ -12,7 +12,7 @@ class ProductDetailFactory {
     static func make(with product: Product) -> UIViewController {
         let viewController = ProductDetailViewController()
         let presenter = ProductDetailPresenterImpl(product: product,
-                                                   delegate: viewController)
+                                                   view: viewController)
         viewController.presenter = presenter
         return viewController
     }
