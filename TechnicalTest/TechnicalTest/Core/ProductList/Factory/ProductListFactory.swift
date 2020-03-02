@@ -16,7 +16,7 @@ class ProductListFactory: Factory {
         let router = ProductListRouterImpl()
         let presenter = ProductListPresenterImpl(interactor: interactor,
                                                  router: router,
-                                                 delegate: viewController)
+                                                 view: viewController)
         viewController.presenter = presenter
         return UINavigationController(rootViewController: viewController)
     }
