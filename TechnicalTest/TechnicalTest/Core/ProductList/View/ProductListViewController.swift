@@ -183,7 +183,12 @@ private extension ProductListViewController {
     }
 
     func reloadData() {
-        tableView.backgroundView = emptyView
+        if let viewModel = viewModel,
+            !viewModel.products.isEmpty {
+            tableView.backgroundView = nil
+        } else {
+            tableView.backgroundView = emptyView
+        }
         tableView.reloadData()
     }
 
