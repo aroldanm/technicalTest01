@@ -101,7 +101,7 @@ extension ProductListViewController: UITableViewDelegate {
     }
 }
 
-extension ProductListViewController: ProductListViewDelegate {
+extension ProductListViewController: ProductListView {
     func updateView(with model: ProductListViewModel) {
         viewModel = model
         fetchingMore = false

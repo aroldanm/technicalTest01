@@ -9,19 +9,20 @@
 import UIKit
 
 class ProductListPresenterImpl {
+    typealias View = (UIViewController & ProductListView)
     private let interactor: ProductListInteractor
     private let router: ProductListRouter
-    private weak var delegate: ProductListViewDelegate?
+    private weak var view: View?
     private var products: Products?
 
     private(set) var titleView = NSLocalizedString("ProductList.title", comment: "title")
     private(set) var emptyLabel = NSLocalizedString("ProductList.emptyLabel", comment: "empty")
     private(set) var loadingLabel = NSLocalizedString("ProductList.gettingData", comment: "loading")
 
-    init(interactor: ProductListInteractor, router: ProductListRouter, delegate: ProductListViewDelegate? = nil) {
+    init(interactor: ProductListInteractor, router: ProductListRouter, view: View? = nil) {
         self.interactor = interactor
         self.router = router
-        self.delegate = delegate
+        self.view = view
     }
 }
 
@@ -46,8 +47,8 @@ extension ProductListPresenterImpl: ProductListPresenter {
     }
 
     func select(item: Product) {
-        if let viewController = delegate as? UIViewController {
-            router.navigateToDetail(with: item, from: viewController)
+        if let view = view {
+            router.navigateToDetail(with: item, from: view)
         }
     }
 }
@@ -58,7 +59,7 @@ private extension ProductListPresenterImpl {
             self.products = products
         }
         let viewModel = makeViewModel()
-        delegate?.updateView(with: viewModel)
+        view?.updateView(with: viewModel)
     }
 
     func makeViewModel() -> ProductListViewModel {
