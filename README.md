@@ -43,3 +43,6 @@ En esta sección se pretende mostrar un modelado de la arquitectura planificada 
 <img src="./class_diagram.png" width="100%"/>
 
 ## Desarrollo
+El desarrollo final se compone de dos pantallas. La primera pantalla muestra un listado simple con las series que nos proporciona API, mostrando la previsualización del cartel y el nombre de la serie. En la segunda pantalla se representa un detalle minimalista donde se encuentra el nombre, los géneros, la imagen de cartel y la sinopsis de la serie.  
+
+<img src="./landing-image.jpg" width="80%"/>
