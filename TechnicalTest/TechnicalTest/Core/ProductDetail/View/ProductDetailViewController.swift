@@ -76,12 +76,8 @@ private extension ProductDetailViewController {
         titleLabel.text = viewModel.title
         genresLabel.text = viewModel.genres
         ratingView.update(with: viewModel.rating, tint: .systemPink)
-        if let url = URL(string: viewModel.preview) {
-            imageBlurred.load(from: url)
-        }
-        if let url = URL(string: viewModel.image) {
-            imageView.load(from: url)
-        }
+        imageBlurred.load(from: viewModel.preview)
+        imageView.load(from: viewModel.image)
         updateTextView(text: viewModel.summary,
                        userMode: UIScreen.main.traitCollection.userInterfaceStyle)
     }
