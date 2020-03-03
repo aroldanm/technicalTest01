@@ -11,21 +11,31 @@ import UIKit
 let imageCache = NSCache<NSString, AnyObject>()
 
 extension UIImageView {
-    func load(from url: URL, with placeholder: UIImage? = nil) {
+    func load(from stringUrl: String, placeholder: UIImage? = nil) {
         self.image = placeholder
-        if let cachedImage = imageCache.object(forKey: url.absoluteString as NSString) as? UIImage {
-            self.image = cachedImage
+        if let cached = imageCache.object(forKey: stringUrl as NSString) as? UIImage {
+            self.image = cached
             return
         }
-        URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
-            if let data = data, error == nil {
-                DispatchQueue.main.async {
-                    if let image = UIImage(data: data) {
-                        imageCache.setObject(image, forKey: url.absoluteString as NSString)
-                        self.image = image
+        if let url = URL(string: stringUrl) {
+            URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+                if let data = data, error == nil {
+                    DispatchQueue.main.async {
+                        if let image = UIImage(data: data) {
+                            imageCache.setObject(image, forKey: url.absoluteString as NSString)
+                            UIView.transition(with: self, duration: 0.25, options: .transitionCrossDissolve, animations: {
+                                self.image = image
+                            }, completion: nil)
+                        }
                     }
                 }
-            }
-        }).resume()
+            }).resume()
+        }
+    }
+
+    func cached(from stringUrl: String) {
+        if let cached = imageCache.object(forKey: stringUrl as NSString) as? UIImage {
+            self.image = cached
+        }
     }
 }

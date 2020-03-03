@@ -28,9 +28,7 @@ class ProductListCell: UITableViewCell, CustomCell {
 
     func populateCell(model: ProductListCellViewModel) {
         name.text = model.name
-        if let url = URL(string: model.image) {
-            preview.load(from: url)
-        }
+        preview.load(from: model.image)
     }
 
     override func awakeFromNib() {
