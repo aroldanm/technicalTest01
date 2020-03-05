@@ -24,10 +24,17 @@ class ProductListCell: UITableViewCell, CustomCell {
             container.layer.shadowOpacity = Constants.shadowOpacity
         }
     }
-    @IBOutlet private weak var name: UILabel!
+    @IBOutlet private weak var name: UILabel! {
+        didSet {
+            name.adjustsFontSizeToFitWidth = true
+            name.minimumScaleFactor = 0.9
+        }
+    }
+    @IBOutlet private weak var sublabel: UILabel!
 
     func populateCell(model: ProductListCellViewModel) {
         name.text = model.name
+        sublabel.text = model.genres
         preview.load(from: model.image)
     }
 
