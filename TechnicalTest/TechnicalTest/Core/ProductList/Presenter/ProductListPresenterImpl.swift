@@ -46,9 +46,10 @@ extension ProductListPresenterImpl: ProductListPresenter {
         }
     }
 
-    func select(item: Product) {
-        if let view = view {
-            router.navigateToDetail(with: item, from: view)
+    func select(item: ProductListCellViewModel) {
+        if let view = view,
+            let product = products?.list.first(where: {$0.id == item.id}) {
+            router.navigateToDetail(with: product, from: view)
         }
     }
 }
@@ -64,7 +65,14 @@ private extension ProductListPresenterImpl {
 
     func makeViewModel() -> ProductListViewModel {
         let products = self.products?.list ?? Products().list
-        return ProductListViewModel(products: products,
+        var cellViewModels = [ProductListCellViewModel]()
+        products.forEach { product in
+            cellViewModels.append(ProductListCellViewModel(id: product.id,
+                                                           name: product.name,
+                                                           genres: product.genres,
+                                                           image: product.imageUrl.medium ?? ""))
+        }
+        return ProductListViewModel(items: cellViewModels,
                                     shouldPaginate: interactor.shouldPaginate,
                                     numberOfSections: interactor.shouldPaginate ? 2 : 1)
     }

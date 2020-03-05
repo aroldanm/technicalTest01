@@ -13,5 +13,5 @@ protocol ProductListPresenter {
 
     func loadItems()
     func loadMoreItems()
-    func select(item: Product)
+    func select(item: ProductListCellViewModel)
 }

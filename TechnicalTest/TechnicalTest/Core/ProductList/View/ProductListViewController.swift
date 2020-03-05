@@ -16,7 +16,7 @@ class ProductListViewController: UIViewController {
         if let viewModel = viewModel {
             return viewModel.shouldPaginate &&
                 !fetchingMore &&
-                !viewModel.products.isEmpty
+                !viewModel.items.isEmpty
         }
         return false
     }
@@ -68,7 +68,7 @@ extension ProductListViewController: UITableViewDataSource {
             if section == viewModel.numberOfSections - 1, shouldfetchMore {
                 return Constants.indicatorSections
             }
-            return viewModel.products.count
+            return viewModel.items.count
         }
         return Constants.defaultRows
     }
@@ -80,10 +80,8 @@ extension ProductListViewController: UITableViewDataSource {
                 cell.startAnimating()
                 return cell
             } else if let cell = tableView.dequeueReusableCell(withIdentifier: ProductListCell.identifier, for: indexPath) as? ProductListCell {
-                let product = viewModel.products[indexPath.row]
-                let model = ProductListCellViewModel(name: product.name,
-                                                     image: product.imageUrl.medium ?? "")
-                cell.populateCell(model: model)
+                let item = viewModel.items[indexPath.row]
+                cell.populateCell(model: item)
                 return cell
             }
         }
@@ -95,8 +93,8 @@ extension ProductListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if let viewModel = viewModel {
-            let product = viewModel.products[indexPath.row]
-            presenter?.select(item: product)
+            let item = viewModel.items[indexPath.row]
+            presenter?.select(item: item)
         }
     }
 }
@@ -184,7 +182,7 @@ private extension ProductListViewController {
 
     func reloadData() {
         if let viewModel = viewModel,
-            !viewModel.products.isEmpty {
+            !viewModel.items.isEmpty {
             tableView.backgroundView = nil
         } else {
             tableView.backgroundView = emptyView
