@@ -30,7 +30,7 @@ struct ProductEntity: Codable {
 
 extension ProductEntity {
     struct Rating: Codable {
-        var average: Float?
+        var average: Double?
     }
 
     struct Schedule: Codable {
