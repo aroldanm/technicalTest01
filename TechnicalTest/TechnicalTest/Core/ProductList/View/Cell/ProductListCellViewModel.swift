@@ -7,6 +7,8 @@
 //
 
 struct ProductListCellViewModel {
+    var id: Int
     var name: String
+    var genres: String
     var image: String
 }

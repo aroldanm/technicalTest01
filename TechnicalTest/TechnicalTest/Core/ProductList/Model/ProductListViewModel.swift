@@ -9,7 +9,7 @@
 import UIKit
 
 struct ProductListViewModel {
-    var products: [Product]
+    var items: [ProductListCellViewModel]
     var shouldPaginate: Bool
     var numberOfSections: Int
 }
