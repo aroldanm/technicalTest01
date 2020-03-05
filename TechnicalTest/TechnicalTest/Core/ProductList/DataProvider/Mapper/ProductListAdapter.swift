@@ -26,16 +26,18 @@ private extension ProductListAdapter {
             let name = item.name,
             let summary = item.summary,
             let imageMedium = item.image?.medium,
-            let genres = item.genres,
+            let genresItems = item.genres,
             let imageOriginal = item.image?.original else {
                 return nil
         }
+        let genres = genresItems.joined(separator: " • ")
+        let normalizedRating = (item.rating?.average ?? 0) * 5.0 / 10.0
         return Product(id: id,
                        name: name,
                        summary: summary,
                        imageUrl: Product.ImageURL(medium: imageMedium,
                                                   original: imageOriginal),
-                       rating: item.rating?.average ?? 0,
+                       rating: normalizedRating,
                        genres: genres)
     }
 }
