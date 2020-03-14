@@ -11,6 +11,6 @@ struct ProductDetailViewModel {
     var summary: String
     var image: String
     var preview: String
-    var rating: Float
+    var rating: Double
     var genres: String
 }

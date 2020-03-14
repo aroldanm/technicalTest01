@@ -11,8 +11,8 @@ struct Product {
     private(set) var name: String
     private(set) var summary: String
     private(set) var imageUrl: ImageURL
-    private(set) var rating: Float
-    private(set) var genres: [String]
+    private(set) var rating: Double
+    private(set) var genres: String
 
     struct ImageURL {
         var medium: String?

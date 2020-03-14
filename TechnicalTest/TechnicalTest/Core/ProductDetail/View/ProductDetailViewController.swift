@@ -76,8 +76,8 @@ private extension ProductDetailViewController {
         titleLabel.text = viewModel.title
         genresLabel.text = viewModel.genres
         ratingView.update(with: viewModel.rating, tint: .systemPink)
-        imageBlurred.load(from: viewModel.preview)
-        imageView.load(from: viewModel.image)
+        _ = imageBlurred.load(from: viewModel.preview)
+        _ = imageView.load(from: viewModel.image)
         updateTextView(text: viewModel.summary,
                        userMode: UIScreen.main.traitCollection.userInterfaceStyle)
     }
