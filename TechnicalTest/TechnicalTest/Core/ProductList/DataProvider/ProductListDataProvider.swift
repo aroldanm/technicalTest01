@@ -12,12 +12,5 @@ protocol ProductListDataProvider {
     typealias Success = (Products) -> Void
     typealias Failure = (RequestError) -> Void
 
-    func request(_ request: ProductListRequest, success: @escaping Success, failure: @escaping Failure)
-}
-
-enum RequestError: Error {
-    case invalidUrl
-    case httpError(Int, URLResponse?)
-    case invalidResponse(Error?)
-    case unknown(Error?)
+    func request(_ productRequest: ProductListRequest, success: @escaping Success, failure: @escaping Failure)
 }

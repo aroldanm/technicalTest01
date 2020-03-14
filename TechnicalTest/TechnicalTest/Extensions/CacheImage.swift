@@ -11,31 +11,57 @@ import UIKit
 let imageCache = NSCache<NSString, AnyObject>()
 
 extension UIImageView {
-    func load(from stringUrl: String, placeholder: UIImage? = nil) {
+    func load(from stringUrl: String, placeholder: UIImage? = nil) -> URLSessionTask? {
         self.image = placeholder
-        if let cached = imageCache.object(forKey: stringUrl as NSString) as? UIImage {
+        if let cached = loadImageFromCache(key: stringUrl) {
             self.image = cached
-            return
-        }
-        if let url = URL(string: stringUrl) {
-            URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
-                if let data = data, error == nil {
-                    DispatchQueue.main.async {
-                        if let image = UIImage(data: data) {
-                            imageCache.setObject(image, forKey: url.absoluteString as NSString)
-                            UIView.transition(with: self, duration: 0.25, options: .transitionCrossDissolve, animations: {
-                                self.image = image
-                            }, completion: nil)
-                        }
-                    }
+            return nil
+        } else {
+            guard let url = URL(string: stringUrl) else {
+                return nil
+            }
+            return loadImageFromUrl(url) { image in
+                if let image = image {
+                    self.saveImageToCache(key: stringUrl, image: image)
+                    self.setImage(image)
                 }
-            }).resume()
+            }
         }
     }
+}
 
-    func cached(from stringUrl: String) {
-        if let cached = imageCache.object(forKey: stringUrl as NSString) as? UIImage {
-            self.image = cached
+private extension UIImageView {
+
+    func loadImageFromCache(key: String) -> UIImage? {
+        return imageCache.object(forKey: key as NSString) as? UIImage
+    }
+
+    func saveImageToCache(key: String, image: UIImage) {
+        imageCache.setObject(image, forKey: key as NSString)
+    }
+
+    func loadImageFromUrl(_ url: URL, completion: @escaping (UIImage?) -> Void) -> URLSessionTask {
+        let task: URLSessionTask
+        task = URLSession.shared.dataTask(with: url) { (data, _, error) in
+            if error == nil,
+                let data = data {
+                completion(UIImage(data: data))
+            } else {
+                completion(nil)
+            }
+        }
+        task.resume()
+        return task
+    }
+
+    func setImage(_ image: UIImage, animated: Bool = true) {
+        DispatchQueue.main.async {
+            UIView.transition(with: self,
+                              duration: animated ? 0.25 : 0.0,
+                              options: .transitionCrossDissolve,
+                              animations: {
+                self.image = image
+            }, completion: nil)
         }
     }
 }

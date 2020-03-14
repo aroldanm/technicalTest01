@@ -74,6 +74,8 @@
 		85E5FC56240DD4D9001F721C /* ProductListDataProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E5FC55240DD4D9001F721C /* ProductListDataProviderMock.swift */; };
 		85E5FC57240DD533001F721C /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858ABEAC240A804B00CDD109 /* Products.swift */; };
 		85E5FC58240DD53B001F721C /* ProductListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858ABE9F24098B8800CDD109 /* ProductListRequest.swift */; };
+		85F0BE33241D425C00F59FF1 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0BE32241D425C00F59FF1 /* Network.swift */; };
+		85F0BE37241D59A500F59FF1 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0BE36241D59A500F59FF1 /* Request.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +140,8 @@
 		85E5FC45240DCC5F001F721C /* ProductListRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListRouterTests.swift; sourceTree = "<group>"; };
 		85E5FC4E240DD3C1001F721C /* ProductListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListInteractorTests.swift; sourceTree = "<group>"; };
 		85E5FC55240DD4D9001F721C /* ProductListDataProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListDataProviderMock.swift; sourceTree = "<group>"; };
+		85F0BE32241D425C00F59FF1 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		85F0BE36241D59A500F59FF1 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,8 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				858ABE7A2409757300CDD109 /* Core */,
-				858ABE97240978DC00CDD109 /* Shared Protocols */,
-				858A0EE6240B79A3005922D8 /* Shared Views */,
+				85F0BE30241D41F600F59FF1 /* Shared */,
 				858A0EDB240B692C005922D8 /* Extensions */,
 				858A0EDC240B6942005922D8 /* Application */,
 				8510640D24096D1A00CD6B51 /* Assets.xcassets */,
@@ -274,12 +277,12 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		858A0EE6240B79A3005922D8 /* Shared Views */ = {
+		858A0EE6240B79A3005922D8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				858A0EE7240B79B6005922D8 /* Cells */,
 			);
-			path = "Shared Views";
+			path = Views;
 			sourceTree = "<group>";
 		};
 		858A0EE7240B79B6005922D8 /* Cells */ = {
@@ -382,13 +385,13 @@
 			path = DataProvider;
 			sourceTree = "<group>";
 		};
-		858ABE97240978DC00CDD109 /* Shared Protocols */ = {
+		858ABE97240978DC00CDD109 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				858ABE982409792900CDD109 /* Factory.swift */,
 				858A0EEC240B7AE0005922D8 /* CustomCell.swift */,
 			);
-			path = "Shared Protocols";
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		858ABEAB240A800500CDD109 /* Domain */ = {
@@ -476,6 +479,25 @@
 				85E5FC55240DD4D9001F721C /* ProductListDataProviderMock.swift */,
 			);
 			path = DataProvider;
+			sourceTree = "<group>";
+		};
+		85F0BE30241D41F600F59FF1 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				85F0BE31241D422E00F59FF1 /* Network */,
+				858ABE97240978DC00CDD109 /* Protocols */,
+				858A0EE6240B79A3005922D8 /* Views */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		85F0BE31241D422E00F59FF1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				85F0BE32241D425C00F59FF1 /* Network.swift */,
+				85F0BE36241D59A500F59FF1 /* Request.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -589,6 +611,7 @@
 				858ABEAA240A636300CDD109 /* ProductEntity.swift in Sources */,
 				858ABE9B240979B400CDD109 /* ProductListFactory.swift in Sources */,
 				85B8E147240C0B1300A5C767 /* ProductDetailViewModel.swift in Sources */,
+				85F0BE33241D425C00F59FF1 /* Network.swift in Sources */,
 				858ABE8C2409770300CDD109 /* ProductListInteractor.swift in Sources */,
 				858A0EDE240B69E6005922D8 /* CacheImage.swift in Sources */,
 				850BA261240C279B009ABE17 /* ProductDetailPresenter.swift in Sources */,
@@ -608,6 +631,7 @@
 				858ABE992409792900CDD109 /* Factory.swift in Sources */,
 				858ABE8E2409771600CDD109 /* ProductListInteractorImpl.swift in Sources */,
 				858A0EEA240B79CF005922D8 /* ActivityIndicatorCell.swift in Sources */,
+				85F0BE37241D59A500F59FF1 /* Request.swift in Sources */,
 				858A0ECA240AC8B0005922D8 /* ProductListViewController.swift in Sources */,
 				858A0ECD240AD40D005922D8 /* ProductListAdapter.swift in Sources */,
 				850BA25F240C278B009ABE17 /* ProductDetailView.swift in Sources */,
