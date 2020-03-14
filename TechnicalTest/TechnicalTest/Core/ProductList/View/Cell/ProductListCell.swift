@@ -32,10 +32,14 @@ class ProductListCell: UITableViewCell, CustomCell {
     }
     @IBOutlet private weak var sublabel: UILabel!
 
+    private var sessionTask: URLSessionTask?
+
     func populateCell(model: ProductListCellViewModel) {
         name.text = model.name
         sublabel.text = model.genres
-        preview.load(from: model.image)
+
+        sessionTask?.cancel()
+        sessionTask = preview.load(from: model.image)
     }
 
     override func awakeFromNib() {
