@@ -19,6 +19,7 @@ class ProductListCell: UITableViewCell, CustomCell {
     }
     @IBOutlet private weak var container: UIView! {
         didSet {
+            selectionStyle = .none
             container.layer.shadowRadius = Constants.shadowRadius
             container.layer.shadowOffset = Constants.shadowOffset
             container.layer.shadowOpacity = Constants.shadowOpacity
@@ -46,8 +47,10 @@ class ProductListCell: UITableViewCell, CustomCell {
         super.awakeFromNib()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
+        let color = highlighted ? Highlighted.Color.on : Highlighted.Color.off
+        container.backgroundColor = color
     }
 }
 
@@ -56,5 +59,12 @@ private extension ProductListCell {
         static let shadowRadius: CGFloat = 4
         static let shadowOffset = CGSize(width: 1, height: 0)
         static let shadowOpacity: Float = 0.14
+    }
+
+    enum Highlighted {
+        enum Color {
+            static let on: UIColor = .secondarySystemFill
+            static let off: UIColor = .secondarySystemGroupedBackground
+        }
     }
 }
